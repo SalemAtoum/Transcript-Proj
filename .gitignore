@@ -1,0 +1,124 @@
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+!.env.example.template
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Python environments and cache
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node.js / frontend generated files
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+build/
+*.tsbuildinfo
+
+# Local audio, video, and meeting data
+data/
+outputs/
+speaker_embeddings/
+voice_profiles/
+**/*.wav
+**/*.mp3
+**/*.m4a
+**/*.mp4
+**/*.webm
+**/*.flac
+**/*.ogg
+
+# Voice embeddings and model weights
+**/*.npy
+**/*.ckpt
+**/*.pt
+**/*.pth
+**/*.onnx
+**/*.safetensors
+models/
+research/**/pretrained_models/
+
+# Local model caches
+.cache/
+huggingface/
+**/.cache/
+
+# Research outputs that may contain meeting content
+research/**/round*_results/
+research/**/embeddings/
+research/**/voice_profiles/
+research/**/identification_results/
+research/**/aligned_results/
+research/**/final_transcript/
+research/**/canonical_transcript.json
+research/**/meeting.json
+research/**/meeting.md
+research/**/meeting.txt
+research/**/diarization_result.json
+
+# Backup and nested repository
+frontend-replit-backup/
+**/.git/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# All runtime data under source tree
+src/data/
+
+# Sensitive research outputs and real meeting artifacts
+research/phase3/round8_ground_truth.json
+research/phase4/*.json
+research/phase5/*.json
+research/phase5/**/*.json
+research/phase6/*.json
+research/phase6/**/*.json
+research/phase7/
+
+# Keep research code and safe summaries; exclude generated media
+research/**/embeddings/
+research/**/voice_profiles/
+research/**/identification_results/
+research/**/aligned_results/
+research/**/final_transcript/
+research/**/pretrained_models/
+research/**/round*_results/
+research/**/*.wav
+research/**/*.mp3
+research/**/*.m4a
+research/**/*.npy
+research/**/*.ckpt
+
+# Exclude all research artifacts by default
+research/**
+
+# Allow research source code and safe documentation for review
+!research/
+!research/**/
+!research/**/*.py
+!research/**/*.md
+# Never publish generated meeting transcripts or metadata
+research/phase7/meeting.*
+research/**/meeting.json
+research/**/canonical_transcript.json
+research/**/diarization_result.json
+research/**/final_speaker_transcript.*
+research/**/aligned_transcript.json
+research/**/phase*_results.json
+
+# Allow synthetic frontend demo data
+!frontend/src/data/
+!frontend/src/data/mockMeetings.ts

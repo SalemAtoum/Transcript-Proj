@@ -1,0 +1,18 @@
+
+# API backend
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+
+# Audio processing and AI
+torch
+torchaudio
+pyannote.audio
+speechbrain
+openai-whisper
+numpy
+soundfile
+
+# Configuration
+python-dotenv
